@@ -1,0 +1,25 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("yourprotector.jpg");
+
+    /* Set a specific height */
+    min-height: 300px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#bar{position: fixed; width: 100%; top: 0; height: 30px; background: black; color: white}
+#push{margin-bottom: 30px}
+#caption{
+	padding:10px;
+}
+#wrap{
+	padding:10px;
+}

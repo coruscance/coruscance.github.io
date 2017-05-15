@@ -1,0 +1,69 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+
+<script type="text/javascript">
+  var times=new Array(0, 2,4,5);
+  var caption=new Array("hi","hi2","hi3","hi4");
+
+  var tag = document.createElement('script');
+  tag.id = 'iframe-demo';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+
+function updateTimer(){
+    // Update current time text display.
+    $('#current-time').text(player.getCurrentTime() );
+    for(var i=0;i<times.length;i++){
+      if (player.getCurrentTime() > times[i]){
+        $('#caption').text(caption[i]);
+      }
+    }
+    $('#duration').text(player.getDuration());
+}
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('existing-iframe-example', {
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': updateTimer
+        }
+    });
+  }
+  function onPlayerReady(event) {
+time_update_interval = setInterval(function () {
+        updateTimer();
+    }, 1000)
+
+  }
+
+
+</script>
+</head>
+
+<div id="bar">
+Coruscance
+</div>
+<div id=push>
+
+<div class="parallax"></div>
+<h1>Fleet Foxes - Your Protector</h1>
+This was my first cover. It took me about a week from conception to posting the video.
+
+<div style="float: left; clear: left">
+<iframe id="existing-iframe-example"
+        width="640" height="360"
+        src="https://www.youtube.com/embed/kZMktrLxj84?enablejsapi=1"
+        frameborder="0"
+        style="border: solid 4px #000"
+></iframe></div>
+<div id="wrap">
+<div id="current-time"></div>
+<div id="duration"></div>
+<div id="caption">This was my first cover. It took me about a week from conception to posting the video.</div>
+</div>
+</div>
