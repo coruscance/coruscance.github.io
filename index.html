@@ -5,8 +5,9 @@
 
 
 <script type="text/javascript">
-  var times=new Array(0, 2,4,5);
-  var caption=new Array("hi","hi2","hi3","hi4");
+  var times=new Array(0, 17);
+  var caption=["This first video took me about one week from conception to finish."];
+  caption.push("For those familiar with the pipa repertoire, I styled it after the more lyrical left-hand pieces, especially 春江花月夜. Here are some left-hand playing and harmonics right from the start.");
 
   var tag = document.createElement('script');
   tag.id = 'iframe-demo';
@@ -24,7 +25,7 @@ function updateTimer(){
         $('#caption').text(caption[i]);
       }
     }
-    $('#duration').text(player.getDuration());
+    //$('#duration').text(player.getDuration());
 }
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('existing-iframe-example', {
@@ -52,7 +53,7 @@ Coruscance
 
 <div class="parallax"></div>
 <h1>Fleet Foxes - Your Protector</h1>
-This was my first cover. It took me about a week from conception to posting the video. Here it is with accompanying commentary.
+This was my first cover. Here it is with accompanying commentary.
 
 <br><br>
 
@@ -65,8 +66,7 @@ This was my first cover. It took me about a week from conception to posting the 
 ></iframe></div>
 <div id="wrap">
 <div id="current-time"></div>
-<div id="duration"></div>
-<div id="caption">Start the video and text will be here.</div>
+<div id="caption">This first video took me about one week from conception to finish.</div>
 </div>
 </div>
 <br><br><br><br><br><br><br><br>
