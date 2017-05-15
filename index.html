@@ -5,9 +5,13 @@
 
 
 <script type="text/javascript">
-  var times=new Array(0, 17);
+  var lyricstimes=new Array(12,17);
+  var lyrics=["She left a week to roam","Your protector's coming home","Keep your secrets with you","Safe from the outside","You walk along the stream","Your head caught in a waking dream","Your protector's coming home, coming home","As you lay to die beside me, baby","On the morning that you came","Would you wait for me?","The other one","Would wait for me","As you lay to die beside me, baby","On the morning that you came","Would you wait for me?","The other one","Would wait for me","You run with the devil","You run with the devil","Tell your brother to be good","Tell your sister not to go","Tell your mother not to wait","Tell your father I was good","As you lay to die beside me, baby","On the morning that you came","Would you wait for me?","The other one","Would wait for me"];
+
+  var times=new Array(0, 17, 78);
   var caption=["This first video took me about one week from conception to finish."];
   caption.push("For those familiar with the pipa repertoire, I styled it after the more lyrical left-hand pieces, especially 春江花月夜. Here are some left-hand playing and harmonics right from the start.");
+  caption.push("I had a very hard time figuring out what to play in this part. Still not completely satisfied.")
 
   var tag = document.createElement('script');
   tag.id = 'iframe-demo';
@@ -25,6 +29,11 @@ function updateTimer(){
         $('#caption').text(caption[i]);
       }
     }
+    for(var i=0;i<lyricstimes.length;i++){
+      if (player.getCurrentTime() > times[i]){
+        $('#lyrics').text("lyrics: "+lyrics[i]+"<br><br>");
+      }
+    }    
     //$('#duration').text(player.getDuration());
 }
   function onYouTubeIframeAPIReady() {
@@ -53,7 +62,7 @@ Coruscance
 
 <div class="parallax"></div>
 <h1>Fleet Foxes - Your Protector</h1>
-This was my first cover. Here it is with accompanying commentary.
+I love the Fleet Fodes, and This was my first cover. Here it is with accompanying commentary and lyrics.
 
 <br><br>
 
@@ -66,6 +75,7 @@ This was my first cover. Here it is with accompanying commentary.
 ></iframe></div>
 <div id="wrap">
 <div id="current-time"></div>
+<div id="lyrics"></div>
 <div id="caption">This first video took me about one week from conception to finish.</div>
 </div>
 </div>
